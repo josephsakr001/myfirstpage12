@@ -1,0 +1,86 @@
+body, html {
+  margin:0;
+  padding:0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+header {
+  padding:10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px; 
+ 
+  
+}
+
+
+.left-icon {
+ 
+  align-items: center;
+}
+.right-icon i{
+  margin:0 10px;
+}
+
+.a-link a {
+  margin-right: 40px;
+  text-decoration: none;
+  color: #333;
+}
+.maincontent{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.mainleft, .mainright {
+ 
+}
+.mainimage {
+  padding:10rem;
+  border-radius: 50% 0 50% 50%;
+}
+.cyan {
+  color: rgb(0, 89, 255);
+}
+.mainleft h1{
+  font-size: 4.5rem;
+}
+
+.dots {
+  position: absolute !important;
+  top: 257px;
+  right: 179px;
+  width: 210px;
+  height: 138px;
+}
+
+.halftone {
+	--mask: linear-gradient(rgb(0 0 0), rgb(0 0 0 / 0.5));
+	--stop1: 0.03rem;
+	--stop2: 0.4rem;
+	--invert: 0;
+	--dotColor: black;
+	--bgColor: white;
+	--dottedBackground: radial-gradient(circle at center, var(--dotColor) var(--stop1), transparent var(--stop2));
+	
+	aspect-ratio: 1;
+	position: relative;
+	background: var(--bgColor);
+	filter: contrast(50) invert(var(--invert, 0));
+	mix-blend-mode: multiply;
+	isolation: isolate;
+}
+
+.halftone::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-image: var(--dottedBackground);
+	background-size: var(--bgSize, 2rem) var(--bgSize, 2rem);
+	background-repeat: round;
+	background-position: 0 0, var(--bgPosition) var(--bgPosition);
+	mask-image: var(--mask);
+}
